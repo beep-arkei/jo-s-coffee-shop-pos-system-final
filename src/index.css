@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 30 25% 96%;
+    --foreground: 25 30% 15%;
+    --card: 30 20% 99%;
+    --card-foreground: 25 30% 15%;
+    --popover: 30 20% 99%;
+    --popover-foreground: 25 30% 15%;
+    --primary: 25 45% 35%;
+    --primary-foreground: 30 25% 96%;
+    --secondary: 30 30% 90%;
+    --secondary-foreground: 25 30% 20%;
+    --muted: 30 15% 92%;
+    --muted-foreground: 25 10% 50%;
+    --accent: 30 40% 82%;
+    --accent-foreground: 25 30% 15%;
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 140 50% 40%;
+    --success-foreground: 0 0% 100%;
+    --border: 30 20% 85%;
+    --input: 30 20% 85%;
+    --ring: 25 45% 35%;
+    --radius: 0.75rem;
+
+    --sidebar-background: 25 30% 18%;
+    --sidebar-foreground: 30 20% 90%;
+    --sidebar-primary: 30 40% 82%;
+    --sidebar-primary-foreground: 25 30% 15%;
+    --sidebar-accent: 25 25% 25%;
+    --sidebar-accent-foreground: 30 20% 90%;
+    --sidebar-border: 25 20% 25%;
+    --sidebar-ring: 30 40% 82%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: 'DM Sans', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Playfair Display', serif;
+  }
+  .font-body {
+    font-family: 'DM Sans', sans-serif;
+  }
+  .scrollbar-thin {
+    scrollbar-width: thin;
+  }
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 3px;
+  }
+}
+
+@media print {
+  body * { visibility: hidden; }
+  .print-receipt, .print-receipt * { visibility: visible; }
+  .print-receipt { position: absolute; left: 0; top: 0; width: 80mm; }
+}
